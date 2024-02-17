@@ -1,77 +1,88 @@
-import React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import Box from '@mui/material/Box';
-import CardActions from '@mui/material/CardActions';
+import Navbar from "../Components/Navbar/Navbar";
 
-export default function CreateForm() {
-  const [collection, setCollection] = React.useState('');
-
-  const handleChange = (event) => {
-    setCollection(event.target.value);
-  };
-
+function CreateForm() {
   return (
-    <Card>
-      <CardHeader title="Create NFT" subheader="Enter the details of your NFT." />
-      <CardContent>
-        <Box
-          component="form"
-          sx={{
-            '& .MuiTextField-root': { m: 1, width: '25ch' },
-            '& .MuiFormControl-root': { m: 1, width: '25ch' }
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <div>
-            <TextField required id="nft-name" label="NFT Name" placeholder="Enter the name of your NFT" variant="outlined" />
-            <TextField
-              id="description"
-              label="Description"
-              placeholder="Enter the description of your NFT"
-              multiline
-              rows={4}
-              variant="outlined"
+    <>
+      <Navbar />
+      <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="px-6 py-4">
+          <h1 className="text-xl font-semibold text-gray-900">Upload Song</h1>
+        </div>
+        <div className="p-6 space-y-4">
+          <div className="space-y-2">
+            <label htmlFor="nft-name" className="text-gray-700">
+              Song Name
+            </label>
+            <input
+              id="nft-name"
+              type="text"
+              placeholder="Enter the name of your song"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
             />
-            <TextField
-              required
-              id="image-upload"
-              type="file"
-              variant="outlined"
-              InputLabelProps={{
-                shrink: true,
-              }}
-            />
-            <TextField required id="price" label="Price" type="number" variant="outlined" />
-            <TextField required id="quantity" label="Quantity" type="number" variant="outlined" />
-            <FormControl fullWidth>
-              <InputLabel id="collection-label">Collection</InputLabel>
-              <Select
-                labelId="collection-label"
-                id="collection"
-                value={collection}
-                label="Collection"
-                onChange={handleChange}
-              >
-                <MenuItem value={1}>Collection 1</MenuItem>
-                <MenuItem value={2}>Collection 2</MenuItem>
-                <MenuItem value={3}>Collection 3</MenuItem>
-              </Select>
-            </FormControl>
           </div>
-        </Box>
-      </CardContent>
-      <CardActions disableSpacing>
-        <Button variant="contained" sx={{ ml: 'auto' }}>Submit</Button>
-      </CardActions>
-    </Card>
+          <div className="space-y-2">
+            <label htmlFor="collection" className="text-gray-700">
+              Album
+            </label>
+            {/* Implementing a custom select dropdown with Tailwind CSS might require additional JavaScript for functionality which is not included here. */}
+            <select
+              id="collection"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+            >
+              <option value="">Select</option>
+              {[1, 2, 3].map((key, index) => {
+                return (
+                  <option key={index} value={key}>
+                    Album {key}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          <div className="grid grid-cols-2 gap-x-3">
+            <div className="space-y-2">
+              <label htmlFor="image-upload" className="text-gray-700 block">
+                Song Cover
+              </label>
+              <input
+                id="image-upload"
+                type="file"
+                accept=".png,.jpg,.jpeg"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+              />
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="song-upload" className="text-gray-700 block">
+                Song MP3
+              </label>
+              <input
+                id="song-upload"
+                type="file"
+                accept=".mp3,.wav"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+              />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <label htmlFor="price" className="text-gray-700">
+              Price
+            </label>
+            <input
+              id="price"
+              type="number"
+              placeholder="Enter the price of your Song"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+            />
+          </div>
+        </div>
+        <div className="px-6 py-4 bg-gray-50 text-right">
+          <button className="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500">
+            Submit
+          </button>
+        </div>
+      </div>
+    </>
   );
 }
+
+export default CreateForm;
