@@ -10,16 +10,17 @@
     -webkit-text-stroke-width: 5.5px;
     -webkit-text-stroke-color: white;
     white-space: nowrap;
-    padding-left: 1vw;
+    padding-left: 3rem;
     margin-top: 1vh;
-    text-shadow: 12px 15px green, 13px 16px pink, 14px 17px pink, 15px 18px pink, 16px 19px pink, 17px 20px pink, 18px 21px pink, 19px 22px pink;
+    text-shadow: 7px 10px green, 8px 11px green, 10px 13px pink, 11px 14px pink,
+        12px 15px pink, 13px 16px pink, 14px 17px pink;
 }
 
-.beautifulBackground {
-    backdrop-filter: blur(10px);
+.beautiful-background {
+    backdrop-filter: blur(40px);
 }
 
 .blurredFilter {
-    background-image: url('../../public/7509867_3676796.jpg');
+    background-image: url("./marketplaceback.jpg");
     background-size: cover;
 }

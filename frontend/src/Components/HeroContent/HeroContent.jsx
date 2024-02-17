@@ -1,13 +1,15 @@
 import { Box, Grid, Typography } from "@mui/material";
 import "./HeroContent.css";
+import NFTCard from "../NFTCard/NFTCard";
 
 const HeroContent = () => {
   return (
     <Box
       sx={{
         backgroundImage: "url('./background.jpg')",
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundPosition: "center",
+        backgroundRepeat: "repeat",
       }}
     >
       <Box
@@ -15,8 +17,7 @@ const HeroContent = () => {
           margin: "2rem",
           marginTop: "1rem",
           color: "white",
-          height: "100vh",
-          padding: "40px",
+          padding: "3rem 2rem 4rem 2rem",
           borderRadius: "10px",
           backdropFilter: "blur(100px)",
           backgroundColor: "rgba(255,255,255,0.13)",
@@ -70,6 +71,41 @@ const HeroContent = () => {
               src="./hero.png"
             />
           </Grid>
+        </Grid>
+      </Box>
+      <Box
+        sx={{
+          margin: "2rem",
+          color: "white",
+          padding: "2rem 3rem",
+          borderRadius: "10px",
+          backdropFilter: "blur(50px)",
+          backgroundColor: "rgba(255,255,255,0.13)",
+        }}
+      >
+        <h1
+          className="line-text"
+          style={{
+            margin: 0,
+            fontSize: "56px",
+            fontWeight: 400,
+          }}
+        >
+          Trending Now
+        </h1>
+        <Grid
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            columnGap: "3rem",
+          }}
+        >
+          {[1, 2, 3, 4].map((index) => (
+            <Grid item key={index} sx={{ padding: "0px" }}>
+              <NFTCard id={index} />
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </Box>
