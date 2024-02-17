@@ -1,22 +1,18 @@
 import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { useTheme } from "@mui/material/styles";
-import { Carousel } from "react-responsive-carousel";
-import {
-  Grid,
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Container,
-  Box,
-} from "@mui/material";
-import IconButton from "@mui/material/IconButton";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
-import { Button, CardActionArea, CardActions } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
+import { Carousel } from 'react-responsive-carousel';
+import { Grid, Card, CardMedia, CardContent, Typography, Container, Box, Paper } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import SkipNextIcon from '@mui/icons-material/SkipNext';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import { Button, CardActionArea, CardActions } from '@mui/material';
+import NFTCard from '../Components/NFTCard/NFTCard';
+import './Marketplace.css'
+
 
 const ProductCard = ({ imageUrl, title, price }) => (
   <Card sx={{ padding: "0px" }}>
@@ -36,8 +32,8 @@ const ProductCard = ({ imageUrl, title, price }) => (
             ${price}
           </Typography>
         </Grid>
-        <Grid xs={6} item sx={{ justifyContent: "center", display: "flex" }}>
-          pLAY
+        <Grid xs={6} item sx={{ justifyContent: 'center', display: 'flex' }}>
+          <PlayCircleOutlineIcon fontSize='large' />
         </Grid>
         <Grid item xs={12} sx={{ justifyContent: "center", display: "flex" }}>
           <CardActions>
@@ -59,102 +55,55 @@ const Marketplace = () => {
   return (
     <div>
       <Navbar />
-      <div className="bg-transparent">
-        <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="sr-only">Products</h2>
-          <Grid container spacing={3} sx={{ padding: "10vh" }}>
-            {[1, 2, 3, 4, 5].map((index) => (
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                lg={4}
-                xl={3}
-                key={index}
-                sx={{ padding: "0px" }}
-              >
-                <ProductCard
-                  imageUrl={`https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-0${index}.jpg`}
-                  title="Product Title"
-                  price="Price"
+      <div className='blurredFilter'>
+        <div className='beautifulBackground'>
+          <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+            <div class='line-text'>Some Trending Songs</div>
+            <Grid>
+              {/* <Grid>
+              <Card sx={{ display: 'flex', justifyContent: 'center', bgcolor: 'black' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', bgcolor: 'blue' }}>
+                  <CardContent sx={{ flex: '1 0 auto' }}>
+                    <Typography component="div" variant="h5">
+                      Live From Space
+                    </Typography>
+                    <Typography variant="subtitle1" color="text.secondary" component="div">
+                      Mac Miller
+                    </Typography>
+                  </CardContent>
+                  <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+                    <IconButton aria-label="previous">
+                      {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+                    </IconButton>
+                    <IconButton aria-label="play/pause">
+                      <PlayArrowIcon sx={{ height: 38, width: 38 }} />
+                    </IconButton>
+                    <IconButton aria-label="next">
+                      {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+                    </IconButton>
+                  </Box>
+                </Box>
+                <CardMedia
+                  component="img"
+                  sx={{ width: 151 }}
+                  image="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg"
+                  alt="Live from space album cover"
                 />
-              </Grid>
-            ))}
-          </Grid>
-        </div>
-      </div>
-      {/* <Container maxWidth="xl" className="mx-auto">
-        <Grid container justifyContent="center" alignItems="center" style={{ height: '100vh' }}>
-          <Carousel>
-            <div>
-              <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-01.jpg" style={{ maxWidth: '200px', maxHeight: '200px' }} alt="Carousel Image 1" />
-              <Typography variant="subtitle1" color="textSecondary" className="legend">Legend 1</Typography>
-            </div>
-            <div>
-              <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-02.jpg" style={{ maxWidth: '200px', maxHeight: '200px' }} alt="Carousel Image 2" />
-              <Typography variant="subtitle1" color="textSecondary" className="legend">Legend 2</Typography>
-            </div>
-            <div>
-              <img src="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg" style={{ maxWidth: '200px', maxHeight: '200px' }} alt="Carousel Image 3" />
-              <Typography variant="subtitle1" color="textSecondary" className="legend">Legend 3</Typography>
-            </div>
-          </Carousel>
-        </Grid>
-      </Container> */}
-      {/* <div className="bg-transparent">
-        <Container maxWidth="xl" className="mx-auto">
-          <Grid container justifyContent="center" alignItems="center" style={{ height: '100vh' }}>
-            <Grid container spacing={3}>
-              {[...Array(4)].map((_, index) => (
-                <Grid item key={index} xs={12} sm={6} lg={3}>
-                  <ProductCard2 />
+              </Card>
+            </Grid> */}
+              <Grid>
+                <Grid sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', columnGap: '5vw' }}>
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((index) => (
+                    <Grid item key={index} sx={{ padding: '0px' }}>
+                      <NFTCard />
+                    </Grid>
+                  ))}
                 </Grid>
-              ))}
+              </Grid>
             </Grid>
-          </Grid>
-        </Container>
-      </div> */}
-      <Card sx={{ display: "flex", justifyContent: "center" }}>
-        <Box sx={{ display: "flex", flexDirection: "column", bgcolor: "blue" }}>
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography component="div" variant="h5">
-              Live From Space
-            </Typography>
-            <Typography
-              variant="subtitle1"
-              color="text.secondary"
-              component="div"
-            >
-              Mac Miller
-            </Typography>
-          </CardContent>
-          <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
-            <IconButton aria-label="previous">
-              {theme.direction === "rtl" ? (
-                <SkipNextIcon />
-              ) : (
-                <SkipPreviousIcon />
-              )}
-            </IconButton>
-            <IconButton aria-label="play/pause">
-              <PlayArrowIcon sx={{ height: 38, width: 38 }} />
-            </IconButton>
-            <IconButton aria-label="next">
-              {theme.direction === "rtl" ? (
-                <SkipPreviousIcon />
-              ) : (
-                <SkipNextIcon />
-              )}
-            </IconButton>
-          </Box>
-        </Box>
-        <CardMedia
-          component="img"
-          sx={{ width: 151 }}
-          image="https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-03.jpg"
-          alt="Live from space album cover"
-        />
-      </Card>
+          </div>
+        </div>
+      </div >
     </div>
   );
 };

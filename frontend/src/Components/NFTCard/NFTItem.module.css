@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
+.container {
+    max-width: 18vw;
+    margin: 8vh auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nftGridItem {
+    width: 100%;
+}
+
+
+
+/* @media (min-width: 768px) {
+    .nftGridItem {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .nftGridItem {
+        width: 33.33%;
+    }
+} */
+
+.nftItemStyle {
+    background: #20202d;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.nftItemStyle:hover {
+    box-shadow: rgb(255 255 255 / 25%) 0px 0px 5px 5px;
+}
+
+.nftThumb {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.nftThumb img {
+    display: block;
+    width: 100%;
+    height: 45vh;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.nftItemStyle:hover .nftThumb img {
+    transform: scale(1.21);
+}
+
+.riHeartFill {
+    padding: 0 5px;
+    color: #ff512f;
+    padding-right: 5px;
+    font-size: 18px;
+}
+
+.nftReactionBtn {
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    background: #343444;
+    border-radius: 6px;
+    padding: 5px 6px;
+    min-width: 45px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.nftContent {
+    padding: 15px 20px;
+}
+
+.nftTitle {
+    font-size: 18px;
+    font-family: "Kode Mono", monospace;
+    padding: 0;
+    margin: 2vh 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.nftTitle a {
+    color: #fff;
+    text-decoration: none;
+    
+}
+
+.nftProfile a {
+    position: relative;
+    z-index: 1;
+    display: block;
+    text-align: center;
+}
+
+.dFlexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dFlexBetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nftImageAvatar {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    font-family: "Kode Mono", monospace;
+    justify-content: center;
+}
+
+.nftProfile a.authortext {
+    padding-left: 7px;
+    font-family: "Kode Mono", monospace;
+    text-decoration: none;
+}
+
+.riShieldCheckFill {
+    padding: 0 5px;
+    color: #1d9bf0;
+}
+
+.nftProductOwner {
+    padding: 0 0 15px;
+    position: relative;
+    font-family: "Kode Mono", monospace;
+    color: #fff;
+    text-decoration: none;
+    /* justify-content: center; */
+}
+
+.nftProductBuy .nftBidOwner {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+    color: #fff;
+}
+
+.nftProductOwner strong {
+    color: #fff;
+    font-weight: 500;
+}
+
+.nftProductOwner .biding-price {
+    color: #fff;
+    right: 15px;
+    position: absolute;
+}
+
+.nftProductOwner .biding-price i {
+    color: #ff512f;
+    padding-right: 5px;
+}
+
+.nftBtn span {
+    display: inline-flex;
+    z-index: 1;
+}
+
+.nftBtn i {
+    padding-right: 8px;
+    transition: 0.1s;
+}
+
+.nftBtn-cart {
+    position: relative;
+    overflow: hidden;
+    font-size: 18px;
+    padding: 6px 25px;
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    height: 50px;
+    min-height: 50px;
+    transition: 0.7s;
+}
+
+.nftBtn-cart:hover {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.nftBtn-outline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(97.3deg, #dd2476 0%, #ff512f 100%);
+    transition: transform 0.7s;
+    transform-origin: right;
+    transform: scaleX(0);
+    z-index: 0;
+    border-radius: inherit;
+}
+
+.nftBtn-outline:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.7s;
+}
