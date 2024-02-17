@@ -3,6 +3,7 @@ import Home from "./Pages/Home";
 import Marketplace from "./Pages/Marketplace";
 import About from "./Pages/About";
 import AuctionPage from "./Pages/AuctionPage";
+import CreateForm from "./Pages/CreateForm";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/marketplace" element={<Marketplace />} />
         <Route path="/about" element={<About />} />
         <Route path="/auction/:id" element={<AuctionPage />} />
+        <Route path="/create" element={<CreateForm />} />
       </Routes>
     </Router>
   );
