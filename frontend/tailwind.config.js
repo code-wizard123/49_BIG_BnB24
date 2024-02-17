@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'auctionPage': "url('frontend/public/7509867_3676796.jpg')"
+      }
+    },
   },
   plugins: [],
 }
