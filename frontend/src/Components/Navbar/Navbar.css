@@ -1,0 +1,11 @@
+.nav-link{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.nav-link.first-link{
+    font-size: 36px;
+    font-weight: 800;
+}
