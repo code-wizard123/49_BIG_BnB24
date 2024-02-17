@@ -7,10 +7,9 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'auctionPage': "url('frontend/public/7509867_3676796.jpg')"
+        'auctionPage': "url('')"
       }
     },
   },
   plugins: [],
 }
-

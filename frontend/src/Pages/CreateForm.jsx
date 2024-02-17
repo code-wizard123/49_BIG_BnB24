@@ -4,7 +4,11 @@ function CreateForm() {
   return (
     <>
       <Navbar />
+
       <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="rounded-lg">
+          <img src="./hero.png" />
+        </div>
         <div className="px-6 py-4">
           <h1 className="text-xl font-semibold text-gray-900">Upload Song</h1>
         </div>
