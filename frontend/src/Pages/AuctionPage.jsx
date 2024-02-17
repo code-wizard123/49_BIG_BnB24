@@ -11,8 +11,8 @@ function AuctionPage() {
     <>
       <Navbar />
       <div className="w-full blurredFilter">
-        <div className="container grid gap-6 px-4 py-6 md:grid-cols-2 md:py-12 lg:gap-12 lg:px-6 xl:gap-16 beautifulBackground">
-          <div className="flex flex-col gap-4 md:order-2 ">
+        <div className="container grid gap-6 px-4 py-6 md:grid-cols-2 md:py-12 lg:gap-12 lg:px-6 xl:gap-16 beautiful-background">
+          <div className="flex flex-col gap-4 md:order-2 pt-20">
             <div className="grid gap-1">
               <h1 className="text-3xl font-bold text-white">Space Oddity</h1>
               <p className="text-sm text-gray-300">By David Bowie</p>
@@ -32,16 +32,15 @@ function AuctionPage() {
               </div>
             </div>
             <form className="grid gap-2">
-              <div className="flex justify-center space-x-2">
-                <label className="text-base text-white text-xl pt-3" htmlFor="bid-amount">
-                  Your Bid
-                </label>
-                <TextField color="secondary" focused />
+              <div className="flex justify-center space-x-2 pt-4 pr-8 pb-7 text-white">
+                <TextField color="primary" className="border-0 text-white bg-white rounded-xl" placeholder="Bid Amount" />
               </div>
-              <Button variant="contained" disableElevation>
-                Place Bid
-                <GavelIcon />
-              </Button>
+              <div className="flex justify-center pr-10">
+                <Button variant="contained" style={{ maxWidth: "12vw" }} disableElevation>
+                  Place Bid
+                  <GavelIcon />
+                </Button>
+              </div>
             </form>
           </div>
           <div className="flex items-center justify-center">
