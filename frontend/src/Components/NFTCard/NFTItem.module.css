@@ -85,10 +85,10 @@
 }
 
 .nftTitle {
-    font-size: 18px;
+    font-size: 24px;
     font-family: "Kode Mono", monospace;
     padding: 0;
-    margin: 2vh 0;
+    margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -98,7 +98,6 @@
 .nftTitle a {
     color: #fff;
     text-decoration: none;
-
 }
 
 .nftProfile a {
@@ -112,12 +111,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.dFlexBetween {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .nftImageAvatar {
@@ -152,10 +145,8 @@
     /* justify-content: center; */
 }
 
-.nftProductBuy .nftBidOwner {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.nftProductBuy {
+    text-align: center;
     padding-right: 10px;
     color: #fff;
 }

@@ -24,9 +24,9 @@ const NFTCard = ({ id }) => {
           </div>
 
           <div className={styles.nftContent}>
-            <h3 className={styles.nftTitle}>
+            <h2 className={styles.nftTitle}>
               <a href="#">Name NFT #{id}</a>
-            </h3>
+            </h2>
 
             <div className={`${styles.nftProfile} ${styles.dFlexCenter}`}>
               <a href="#">
@@ -42,28 +42,8 @@ const NFTCard = ({ id }) => {
               <i className={styles.riShieldCheckFill}></i>
             </div>
 
-            {/* <div className={`${styles.nftProductOwner} ${styles.dFlexCenter}`}>
-                            <span className={styles.nftBidOwner}>
-                                PRICE:
-                            </span>
-                            <span className={`${styles.nftBidingPrice} ${styles.dFlexBetween}`}>
-                                <i className={styles.riArrowUpLine}></i>
-                                99.1 ETH
-                            </span>
-                        </div> */}
-
             <div className={`${styles.nftProductBuy} ${styles.dFlexBetween}`}>
-              <span className={styles.nftBidOwner}>
-                PRICE: <strong>99.1 ETH</strong>
-              </span>
-              {/* <button href="#" className={`${styles.nftBtn} ${styles.nftBtnCart} ${styles.nftBtnOutline}`}>
-                                <span>
-                                    <i className={styles.riShoppingCartLine}></i> Buy
-                                </span>
-                            </button> */}
-              <Button variant="contained" size="small">
-                Buy
-              </Button>
+              Price: <strong>99.1 ETH</strong>
             </div>
           </div>
         </div>
