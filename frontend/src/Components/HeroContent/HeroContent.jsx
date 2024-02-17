@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import React from "react";
+import "./HeroContent.css";
 
 const HeroContent = () => {
   return (
@@ -29,7 +29,7 @@ const HeroContent = () => {
                 style={{
                   margin: 0,
                   fontSize: "56px",
-                  fontFamily: "Rubik Doodle Shadow, system-ui",
+                  fontFamily: "Protest Guerrilla, sans-serif",
                   fontWeight: 400,
                   fontStyle: "normal",
                 }}
