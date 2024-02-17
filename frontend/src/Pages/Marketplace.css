@@ -15,12 +15,11 @@
     text-shadow: 12px 15px green, 13px 16px pink, 14px 17px pink, 15px 18px pink, 16px 19px pink, 17px 20px pink, 18px 21px pink, 19px 22px pink;
 }
 
-.beautifulBackground {
-    
+.beautiful-background {
     backdrop-filter: blur(10px);
 }
 
 .blurredFilter {
-    background-image: url('./7509867_3676796.jpg');
+    background-image: url('./public/marketplaceback.jpg');
     background-size: cover;
 }
