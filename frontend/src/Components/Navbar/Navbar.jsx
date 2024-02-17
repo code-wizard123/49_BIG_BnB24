@@ -9,7 +9,7 @@ const Navbar = () => {
       sx={{
         padding: "1rem",
         backgroundColor: "rgba(0,0,0,0)",
-        fontFamily: "Roboto",
+        fontFamily: "Roboto, sans-serif",
         boxShadow: "none",
       }}
     >
