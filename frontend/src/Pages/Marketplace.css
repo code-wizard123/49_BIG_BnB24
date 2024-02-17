@@ -16,11 +16,10 @@
 }
 
 .beautifulBackground {
-    
     backdrop-filter: blur(10px);
 }
 
 .blurredFilter {
-    background-image: url('./7509867_3676796.jpg');
+    background-image: url('../../public/7509867_3676796.jpg');
     background-size: cover;
 }
