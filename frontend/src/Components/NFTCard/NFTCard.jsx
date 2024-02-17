@@ -3,13 +3,15 @@ import React from "react";
 import styles from "./NFTItem.module.css";
 import { Button } from "@mui/material";
 
-const NFTCard = () => {
+const NFTCard = ({ id }) => {
+  const redirectUrl = `/auction/${id}`;
+
   return (
     <div className={styles.container}>
       <div className={styles.nftGridItem}>
         <div className={styles.nftItemStyle}>
           <div className={styles.nftThumb}>
-            <a href="#">
+            <a href={redirectUrl}>
               <img
                 src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/in/wp-content/uploads/2022/03/monkey-g412399084_1280.jpg"
                 alt=""
@@ -23,7 +25,7 @@ const NFTCard = () => {
 
           <div className={styles.nftContent}>
             <h3 className={styles.nftTitle}>
-              <a href="#">Name NFT #1</a>
+              <a href="#">Name NFT #{id}</a>
             </h3>
 
             <div className={`${styles.nftProfile} ${styles.dFlexCenter}`}>
