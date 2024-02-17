@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useTheme } from '@mui/material/styles';
@@ -15,26 +15,27 @@ import './Marketplace.css'
 
 
 const ProductCard = ({ imageUrl, title, price }) => (
-  <Card sx={{ padding: '0px' }}>
-    <CardMedia
-      component="img"
-      alt={title}
-      height="140"
-      image={imageUrl}
-    />
-    <Box sx={{
-      paddingLeft: "20px",
-      paddingTop: "20px"
-    }}>
-      <Grid container sx={{ padding: '0px' }}>
+  <Card sx={{ padding: "0px" }}>
+    <CardMedia component="img" alt={title} height="140" image={imageUrl} />
+    <Box
+      sx={{
+        paddingLeft: "20px",
+        paddingTop: "20px",
+      }}
+    >
+      <Grid container sx={{ padding: "0px" }}>
         <Grid item xs={6}>
-          <Typography variant="subtitle1" color="textSecondary">{title}</Typography>
-          <Typography variant="body1" color="textPrimary">${price}</Typography>
+          <Typography variant="subtitle1" color="textSecondary">
+            {title}
+          </Typography>
+          <Typography variant="body1" color="textPrimary">
+            ${price}
+          </Typography>
         </Grid>
         <Grid xs={6} item sx={{ justifyContent: 'center', display: 'flex' }}>
           <PlayCircleOutlineIcon fontSize='large' />
         </Grid>
-        <Grid item xs={12} sx={{ justifyContent: "center", display: 'flex' }}>
+        <Grid item xs={12} sx={{ justifyContent: "center", display: "flex" }}>
           <CardActions>
             <Button size="small" color="primary">
               Buy
@@ -105,7 +106,6 @@ const Marketplace = () => {
       </div >
     </div>
   );
-}
+};
 
 export default Marketplace;
-
