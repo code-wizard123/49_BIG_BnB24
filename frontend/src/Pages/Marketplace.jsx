@@ -1,62 +1,45 @@
-import React from 'react'
+import React from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { useTheme } from '@mui/material/styles';
-import { Carousel } from 'react-responsive-carousel';
-import { Grid, Card, CardMedia, CardContent, Typography, Container, Box } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import SkipNextIcon from '@mui/icons-material/SkipNext';
-import { Button, CardActionArea, CardActions } from '@mui/material';
-
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto',
-  },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
+import { useTheme } from "@mui/material/styles";
+import { Carousel } from "react-responsive-carousel";
+import {
+  Grid,
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  Container,
+  Box,
+} from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import SkipNextIcon from "@mui/icons-material/SkipNext";
+import { Button, CardActionArea, CardActions } from "@mui/material";
 
 const ProductCard = ({ imageUrl, title, price }) => (
-  <Card sx={{ padding: '0px' }}>
-    <CardMedia
-      component="img"
-      alt={title}
-      height="140"
-      image={imageUrl}
-    />
-    <Box sx={{
-      paddingLeft: "20px",
-      paddingTop: "20px"
-    }}>
-      <Grid container sx={{ padding: '0px' }}>
+  <Card sx={{ padding: "0px" }}>
+    <CardMedia component="img" alt={title} height="140" image={imageUrl} />
+    <Box
+      sx={{
+        paddingLeft: "20px",
+        paddingTop: "20px",
+      }}
+    >
+      <Grid container sx={{ padding: "0px" }}>
         <Grid item xs={6}>
-          <Typography variant="subtitle1" color="textSecondary">{title}</Typography>
-          <Typography variant="body1" color="textPrimary">${price}</Typography>
+          <Typography variant="subtitle1" color="textSecondary">
+            {title}
+          </Typography>
+          <Typography variant="body1" color="textPrimary">
+            ${price}
+          </Typography>
         </Grid>
-        <Grid xs={6} item sx={{ justifyContent: 'center', display: 'flex' }}>
+        <Grid xs={6} item sx={{ justifyContent: "center", display: "flex" }}>
           pLAY
         </Grid>
-        <Grid item xs={12} sx={{ justifyContent: "center", display: 'flex' }}>
+        <Grid item xs={12} sx={{ justifyContent: "center", display: "flex" }}>
           <CardActions>
             <Button size="small" color="primary">
               Buy
@@ -81,7 +64,15 @@ const Marketplace = () => {
           <h2 className="sr-only">Products</h2>
           <Grid container spacing={3} sx={{ padding: "10vh" }}>
             {[1, 2, 3, 4, 5].map((index) => (
-              <Grid item xs={12} sm={6} lg={4} xl={3} key={index} sx={{ padding: '0px' }}>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                lg={4}
+                xl={3}
+                key={index}
+                sx={{ padding: "0px" }}
+              >
                 <ProductCard
                   imageUrl={`https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-0${index}.jpg`}
                   title="Product Title"
@@ -123,25 +114,37 @@ const Marketplace = () => {
           </Grid>
         </Container>
       </div> */}
-      <Card sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', bgcolor: 'blue' }}>
-          <CardContent sx={{ flex: '1 0 auto' }}>
+      <Card sx={{ display: "flex", justifyContent: "center" }}>
+        <Box sx={{ display: "flex", flexDirection: "column", bgcolor: "blue" }}>
+          <CardContent sx={{ flex: "1 0 auto" }}>
             <Typography component="div" variant="h5">
               Live From Space
             </Typography>
-            <Typography variant="subtitle1" color="text.secondary" component="div">
+            <Typography
+              variant="subtitle1"
+              color="text.secondary"
+              component="div"
+            >
               Mac Miller
             </Typography>
           </CardContent>
-          <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+          <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
             <IconButton aria-label="previous">
-              {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+              {theme.direction === "rtl" ? (
+                <SkipNextIcon />
+              ) : (
+                <SkipPreviousIcon />
+              )}
             </IconButton>
             <IconButton aria-label="play/pause">
               <PlayArrowIcon sx={{ height: 38, width: 38 }} />
             </IconButton>
             <IconButton aria-label="next">
-              {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+              {theme.direction === "rtl" ? (
+                <SkipPreviousIcon />
+              ) : (
+                <SkipNextIcon />
+              )}
             </IconButton>
           </Box>
         </Box>
@@ -154,7 +157,6 @@ const Marketplace = () => {
       </Card>
     </div>
   );
-}
+};
 
 export default Marketplace;
-
