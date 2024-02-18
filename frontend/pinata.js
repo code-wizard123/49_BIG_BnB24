@@ -1,15 +1,12 @@
 // require("dotenv").config();
 // import dotenv from "dotenv";
 // dotenv.config();
+import axios from "axios";
 
-const key = import.meta.env.REACT_APP_PINATA_KEY;
-const secret = import.meta.env.REACT_APP_PINATA_SECRET;
-
-console.log(key);
-console.log(secret);
+const key = import.meta.env.VITE_APP_PINATA_KEY;
+const secret = import.meta.env.VITE_APP_PINATA_SECRET;
 
 // const axios = require("axios");
-import "axios";
 // const FormData = require("form-data");
 import { default as FormData } from "form-data";
 

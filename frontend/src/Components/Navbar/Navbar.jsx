@@ -11,16 +11,16 @@ const Navbar = () => {
     const location = useLocation();
     const [currAddress, updateAddress] = useState("0x");
 
-    async function getAddress() {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const signer = provider.getSigner();
-        const addr = await signer.getAddress();
-        updateAddress(addr);
-    }
+    // async function getAddress() {
+    //     const provider = new ethers.providers.Web3Provider(window.ethereum);
+    //     const signer = provider.getSigner();
+    //     const addr = await signer.getAddress();
+    //     updateAddress(addr);
+    // }
 
     function updateButton() {
         const ethereumButton = document.querySelector(".link-wallet");
-        ethereumButton.textContent = "Connected";
+        // ethereumButton.textContent = "Connected";
         // ethereumButton.classList.remove("hover:bg-blue-70");
         // ethereumButton.classList.remove("bg-blue-500");
         // ethereumButton.classList.add("hover:bg-green-70");
@@ -31,7 +31,7 @@ const Navbar = () => {
         const chainId = await window.ethereum.request({
             method: "eth_chainId",
         });
-        if (chainId !== "0x5") {
+        if (chainId !== "0xaa36a7") {
             //alert('Incorrect network! Switch your metamask network to Rinkeby');
             await window.ethereum.request({
                 method: "wallet_switchEthereumChain",
@@ -42,7 +42,7 @@ const Navbar = () => {
             .request({ method: "eth_requestAccounts" })
             .then(() => {
                 updateButton();
-                getAddress();
+                // getAddress();
                 window.location.replace(location.pathname);
             });
     }
@@ -51,7 +51,7 @@ const Navbar = () => {
         if (window.ethereum == undefined) return;
         let val = window.ethereum.isConnected();
         if (val) {
-            getAddress();
+            // getAddress();
             toggleConnect(val);
             updateButton();
         }
@@ -98,7 +98,7 @@ const Navbar = () => {
                 {/* {!connected ? ( */}
                 <div>
                     <button className="link-wallet" onClick={connectAccount}>
-                        Link Wallet
+                        {connected ? "Connected" : "Link Wallet"}
                     </button>
                 </div>
                 {/* ) : (
