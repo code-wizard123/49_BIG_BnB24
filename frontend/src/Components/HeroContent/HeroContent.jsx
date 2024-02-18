@@ -101,7 +101,7 @@ const HeroContent = () => {
             columnGap: "3rem",
           }}
         >
-          {[1, 2, 3, 4].map((index) => (
+          {[1, 2, 3].map((index) => (
             <Grid item key={index} sx={{ padding: "0px" }}>
               <NFTCard id={index} />
             </Grid>
