@@ -50,12 +50,17 @@ const HeroContent = () => {
                     albumName: meta.albumName,
                 };
                 // console.log(item);
+
                 return item;
             })
         );
-        // console.log(typeof items);
-        items = items.slice(0, 3);
+        // console.log("items1", items);
         // console.log(items.slice(0, 3));
+        function shuffleArray(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+        items = shuffleArray(items);
+        // console.log("items2", items);
         updateFetched(true);
         updateData(items);
     }
