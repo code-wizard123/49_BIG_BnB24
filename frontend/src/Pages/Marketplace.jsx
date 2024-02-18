@@ -23,15 +23,16 @@ const Marketplace = () => {
         );
         //create an NFT Token
         let transaction = await contract.getAllNFTs();
-        console.log(1, transaction);
+        // console.log(1, transaction);
 
         //Fetch all the details of every NFT from the contract and display
         const items = await Promise.all(
             transaction.map(async (i) => {
                 var tokenURI = await contract.tokenURI(i.tokenId);
-                console.log("getting this tokenUri", tokenURI);
+                // console.log(tokenURI);
+                // console.log("Cover Image tokenUri", tokenURI);
                 tokenURI = GetIpfsUrlFromPinata(tokenURI);
-                console.log("getting this ", tokenURI);
+                // console.log("Music from Pinata ", tokenURI);
                 let meta = await axios.get(tokenURI);
                 meta = meta.data;
 
@@ -39,26 +40,29 @@ const Marketplace = () => {
                     i.price.toString(),
                     "ether"
                 );
+                // console.log(meta);
                 let item = {
                     price,
                     tokenId: i.tokenId.toNumber(),
                     seller: i.seller,
                     owner: i.owner,
-                    image: meta.image,
-                    name: meta.name,
-                    description: meta.description,
+                    cover: meta.cover,
+                    music: meta.music,
+                    songName: meta.songName,
+                    albumName: meta.albumName,
                 };
+                // console.log(item);
                 return item;
             })
         );
-        // console.log(transaction);
-        console.log(items);
+        // console.log(items);
 
         updateFetched(true);
         updateData(items);
     }
 
     if (!dataFetched) getAllNFTs();
+    console.log(data);
     return (
         <div>
             <Navbar />
@@ -74,11 +78,16 @@ const Marketplace = () => {
                                 columnGap: "5rem",
                             }}
                         >
-                            {data.map((index) => (
-                                <Grid item key={index} sx={{ padding: "0px" }}>
-                                    <NFTCard id={index} />
-                                </Grid>
-                            ))}
+                            {data &&
+                                data.map((value, index) => (
+                                    <Grid
+                                        item
+                                        key={index}
+                                        sx={{ padding: "0px" }}
+                                    >
+                                        <NFTCard id={value} />
+                                    </Grid>
+                                ))}
                         </Grid>
                     </div>
                 </div>

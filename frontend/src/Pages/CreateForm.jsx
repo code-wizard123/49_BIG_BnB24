@@ -12,23 +12,24 @@ function CreateForm() {
         description: "",
         price: "",
     });
-    const [fileURL, setFileURL] = useState(null);
+    const [musicURL, setMusicURL] = useState(null);
+    const [coverURL, setCoverURL] = useState(null);
     const [message, updateMessage] = useState("");
     const location = useLocation();
 
-    async function disableButton() {
-        const listButton = document.getElementById("list-button");
-        listButton.disabled = true;
-        listButton.style.backgroundColor = "grey";
-        listButton.style.opacity = 0.3;
-    }
+    // async function disableButton() {
+    //     const listButton = document.getElementById("list-button");
+    //     listButton.disabled = true;
+    //     listButton.style.backgroundColor = "grey";
+    //     listButton.style.opacity = 0.3;
+    // }
 
-    async function enableButton() {
-        const listButton = document.getElementById("list-button");
-        listButton.disabled = false;
-        listButton.style.backgroundColor = "#A500FF";
-        listButton.style.opacity = 1;
-    }
+    // async function enableButton() {
+    //     const listButton = document.getElementById("list-button");
+    //     listButton.disabled = false;
+    //     listButton.style.backgroundColor = "#A500FF";
+    //     listButton.style.opacity = 1;
+    // }
 
     //This function uploads the NFT image to IPFS
     async function uploadSong(e) {
@@ -42,8 +43,8 @@ function CreateForm() {
             if (response.success === true) {
                 // enableButton();
                 updateMessage("");
-                console.log("Uploaded image to Pinata: ", response.pinataURL);
-                setFileURL(response.pinataURL);
+                console.log("Uploaded Music to Pinata: ", response.pinataURL);
+                setMusicURL(response.pinataURL);
             }
         } catch (e) {
             console.log("Error during file upload", e);
@@ -56,13 +57,16 @@ function CreateForm() {
         try {
             //upload the file to IPFS
             // disableButton();
-            updateMessage("Uploading image.. please dont click anything!");
+            updateMessage("Uploading cover.. please dont click anything!");
             const response = await uploadFileToIPFS(file);
             if (response.success === true) {
                 // enableButton();
                 updateMessage("");
-                console.log("Uploaded image to Pinata: ", response.pinataURL);
-                setFileURL(response.pinataURL);
+                console.log(
+                    "Uploaded Cover Image to Pinata: ",
+                    response.pinataURL
+                );
+                setCoverURL(response.pinataURL);
             }
         } catch (e) {
             console.log("Error during file upload", e);
@@ -75,7 +79,7 @@ function CreateForm() {
 
         // const songName = document.getElementById("exp_quan").value;
         //Make sure that none of the fields are empty
-        if (!songName || !albumName || !price || !fileURL) {
+        if (!songName || !albumName || !price || !musicURL || !coverURL) {
             updateMessage("Please fill all the fields!");
             return -1;
         }
@@ -84,7 +88,8 @@ function CreateForm() {
             songName,
             albumName,
             price,
-            image: fileURL,
+            music: musicURL,
+            cover: coverURL,
         };
         console.log(nftJSON);
         try {
@@ -101,43 +106,41 @@ function CreateForm() {
 
     async function listNFT(e) {
         e.preventDefault();
-        console.log("listing");
+        // console.log("listing");
         //Upload data to IPFS
         try {
             const metadataURL = await uploadMetadataToIPFS();
-            console.log("1listing");
+            // console.log("1listing");
             console.log(metadataURL);
             if (metadataURL === -1) return;
             //After adding your Hardhat network to your metamask, this code will get providers and signers
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
             // disableButton();
-            updateMessage(
-                "Uploading NFT(takes 5 mins).. please dont click anything!"
-            );
+            updateMessage("Listing Music!");
 
-            console.log("2listing");
+            // console.log("2listing");
             //Pull the deployed contract instance
             let contract = new ethers.Contract(
                 Marketplace.address,
                 Marketplace.abi,
                 signer
             );
-
-            console.log("3listing");
+            // console.log("3listing");
             //massage the params to be sent to the create NFT request
             const price = ethers.utils.parseUnits(formParams.price, "ether");
             let listingPrice = await contract.getListPrice();
             listingPrice = listingPrice.toString();
 
-            console.log("4listing");
+            // console.log(listingPrice);
+            // console.log("4listing");
             //actually create the NFT
             let transaction = await contract.createToken(metadataURL, price, {
                 value: listingPrice,
             });
             await transaction.wait();
-            console.log(transaction);
-            console.log("5listing");
+            // console.log(transaction);
+            // console.log("5listing");
 
             alert("Successfully listed your NFT!");
             // enableButton();
@@ -147,7 +150,7 @@ function CreateForm() {
         } catch (e) {
             alert("Upload error" + e);
         }
-        console.log("listed");
+        // console.log("listed");
     }
 
     return (
