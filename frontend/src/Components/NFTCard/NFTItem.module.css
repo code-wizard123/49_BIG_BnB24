@@ -101,10 +101,10 @@
 }
 
 .nftProfile a {
+    overflow: hidden;
     position: relative;
     z-index: 1;
     display: block;
-    text-align: center;
 }
 
 .dFlexCenter {

@@ -3,8 +3,9 @@ import React from "react";
 import styles from "./NFTItem.module.css";
 import { Button } from "@mui/material";
 
-const NFTCard = ({ id, imgUrl, author, price }) => {
-  const redirectUrl = `/auction/${id}`;
+const NFTCard = ({ value }) => {
+  console.log(value);
+  const redirectUrl = `/auction/${value.tokenId}`;
 
   return (
     <div className={styles.container}>
@@ -12,7 +13,10 @@ const NFTCard = ({ id, imgUrl, author, price }) => {
         <div className={styles.nftItemStyle}>
           <div className={styles.nftThumb}>
             <a href={redirectUrl}>
-              <img src={imgUrl} alt="" />
+              <img
+                src={value.cover}
+                alt=""
+              />
             </a>
             <button className={styles.nftReactionBtn}>
               <i className={styles.riHeartFill}></i>
@@ -20,27 +24,20 @@ const NFTCard = ({ id, imgUrl, author, price }) => {
             </button>
           </div>
 
-          <div className={styles.nftContent}>
-            <h2 className={styles.nftTitle}>
-              <a href="#">Name NFT #{id}</a>
-            </h2>
+                    <div className={styles.nftContent}>
+                        <h2 className={styles.nftTitle}>
+                            <a href="#">{value.songName}</a>
+                        </h2>
 
             <div className={`${styles.nftProfile} ${styles.dFlexCenter}`}>
-              <a href="#">
-                <img
-                  src="https://yt3.ggpht.com/QjvZEAyWwOGtkY4D36Q8tiblGg3vXwaohmUkr_zMNGatyLEniLkWq_MRpC7RaZNtoXbbcvC5tw=s900-c-k-c0x00ffffff-no-rj"
-                  className={styles.nftImageAvatar}
-                  alt=""
-                />
-              </a>
               <a href="#" className={styles.authortext}>
-                @{author}
+                @{value.owner}
               </a>
               <i className={styles.riShieldCheckFill}></i>
             </div>
 
             <div className={`${styles.nftProductBuy} ${styles.dFlexBetween}`}>
-              Price: <strong>{price}</strong>
+              Price: <strong>{value.price} ETH</strong>
             </div>
           </div>
         </div>
