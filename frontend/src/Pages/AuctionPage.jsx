@@ -3,8 +3,8 @@ import Navbar from "../Components/Navbar/Navbar";
 import { TextField, Button, Box, Typography, Grid } from "@mui/material";
 import GavelIcon from "@mui/icons-material/Gavel";
 import "./Marketplace.css";
-import AuctionPageCard from "../Components/AuctionPageCard/AuctionPageCard";
 import { useEffect } from "react";
+import { FaEthereum } from "react-icons/fa";
 
 function AuctionPage() {
     useEffect(() => {
@@ -73,7 +73,17 @@ function AuctionPage() {
                                 </span>
                             </p>
                             <div className="flex gap-10 my-10 ">
-                                <AuctionPageCard money="50" />
+                                <div className="buynft">
+                                    <div className="flex flex-col gap-2">
+                                        <p className="text-sm font-bold text-white">
+                                            {6}
+                                        </p>
+                                        <FaEthereum
+                                            style={{ color: "white" }}
+                                        />
+                                    </div>
+                                </div>
+                                {/* <AuctionPageCard money="50" /> */}
                                 {/* <AuctionPageCard text="Auction" money="99" /> */}
                             </div>
                             <div className="flex gap-10 ml-24">
@@ -115,7 +125,7 @@ function AuctionPage() {
                             Oddity and Memory of a Free Festival.
                         </p>
                     </Grid>
-                    <Grid xs={6}>
+                    <Grid item xs={6}>
                         <h2 className="text-5xl font-bold text-white mb-10">
                             Bid History
                         </h2>
