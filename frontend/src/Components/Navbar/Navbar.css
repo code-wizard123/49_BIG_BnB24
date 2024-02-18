@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
 .nav-link {
     text-decoration: none;
     color: whitesmoke;
@@ -28,4 +30,9 @@
 .link-wallet:active {
     transform: translateY(5px);
     box-shadow: 0px 0px 0px 0px #a29bfe;
+}
+
+.nav-link.sell-music{
+    font-size: 48px;
+    font-family: "honk";
 }

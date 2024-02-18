@@ -4,6 +4,7 @@ import Marketplace from "./Pages/Marketplace";
 import About from "./Pages/About";
 import AuctionPage from "./Pages/AuctionPage";
 import CreateForm from "./Pages/CreateForm";
+import Profile from "./Pages/Profile";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/auction/:id" element={<AuctionPage />} />
         <Route path="/create" element={<CreateForm />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );
