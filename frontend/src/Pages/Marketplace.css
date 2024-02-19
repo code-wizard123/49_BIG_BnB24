@@ -16,11 +16,39 @@
         12px 15px pink, 13px 16px pink, 14px 17px pink;
 }
 
-.beautiful-background {
-    backdrop-filter: blur(40px);
+.buynft {
+    background-color: #ffffff10;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #241024;
+    border-color: #1d1d1dfc;
+    border-width: 0.15rem;
+    /* width: 15vw; */
+    padding: 10px 4vw;
+    /* text-align: center; */
+    /* margin-left: 7vw; */
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.nft-img{
+.beautiful-background {
+    backdrop-filter: blur(40px);
+    /* margin-left: 15vw; */
+}
+.beautiful-backgrounds {
+    /* backdrop-filter: blur(40px); */
+    margin-left: 15vw;
+}
+
+.nft-img {
     width: 40vh;
     aspect-ratio: 1;
 }
@@ -28,6 +56,7 @@
 .blurredFilter {
     background-image: url("./marketplaceback.jpg");
     background-size: cover;
+    /* background-color: #242323fc; */
 }
 
 pre {
@@ -46,10 +75,11 @@ pre {
     position: relative;
 
     transform-style: preserve-3d;
-    transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+    transform: perspective(5000px) rotateY(var(--rotateX))
+        rotateX(var(--rotateY));
 }
 
-pre>* {
+pre > * {
     text-shadow: 0 0 0.3em currentColor;
 }
 
@@ -90,7 +120,7 @@ pre::after {
     color: var(--punctuation);
 }
 
-.property+.punctuation {
+.property + .punctuation {
     color: var(--property);
 }
 
@@ -108,107 +138,107 @@ pre::after {
     transition: transform 200ms ease-in-out;
 }
 
-.pre-container.css-only>div {
+.pre-container.css-only > div {
     z-index: 10;
     position: absolute;
     outline: 1px solid lime;
 }
 
-.pre-container.css-only>div:nth-child(1) {
+.pre-container.css-only > div:nth-child(1) {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     inset: 0;
 }
 
-.pre-container.css-only>div:nth-child(2) {
+.pre-container.css-only > div:nth-child(2) {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     inset: 0;
 }
 
-.pre-container.css-only>div:nth-child(3) {
+.pre-container.css-only > div:nth-child(3) {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
     inset: 0;
 }
 
-.pre-container.css-only>div:nth-child(4) {
+.pre-container.css-only > div:nth-child(4) {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     inset: 0;
 }
 
-.pre-container.css-only>div:nth-child(5) {
+.pre-container.css-only > div:nth-child(5) {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     inset: 0;
 }
 
-.pre-container.css-only>div:nth-child(6) {
+.pre-container.css-only > div:nth-child(6) {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
     inset: 0;
 }
 
-.pre-container.css-only>div:nth-child(7) {
+.pre-container.css-only > div:nth-child(7) {
     grid-column: 1 / 2;
     grid-row: 3 / 4;
     inset: 0;
 }
 
-.pre-container.css-only>div:nth-child(8) {
+.pre-container.css-only > div:nth-child(8) {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
     inset: 0;
 }
 
-.pre-container.css-only>div:nth-child(9) {
+.pre-container.css-only > div:nth-child(9) {
     grid-column: 3 / 4;
     grid-row: 3 / 4;
     inset: 0;
 }
 
-.pre-container.css-only>div:nth-child(1):hover~pre {
+.pre-container.css-only > div:nth-child(1):hover ~ pre {
     --rotateX: -25deg;
     --rotateY: 25deg;
 }
 
-.pre-container.css-only>div:nth-child(2):hover~pre {
+.pre-container.css-only > div:nth-child(2):hover ~ pre {
     --rotateX: 0deg;
     --rotateY: 25deg;
 }
 
-.pre-container.css-only>div:nth-child(3):hover~pre {
+.pre-container.css-only > div:nth-child(3):hover ~ pre {
     --rotateX: 25deg;
     --rotateY: 25deg;
 }
 
-.pre-container.css-only>div:nth-child(4):hover~pre {
+.pre-container.css-only > div:nth-child(4):hover ~ pre {
     --rotateX: -25deg;
     --rotateY: 0deg;
 }
 
-.pre-container.css-only>div:nth-child(5):hover~pre {
+.pre-container.css-only > div:nth-child(5):hover ~ pre {
     --rotateX: 0deg;
     --rotateY: 0deg;
 }
 
-.pre-container.css-only>div:nth-child(6):hover~pre {
+.pre-container.css-only > div:nth-child(6):hover ~ pre {
     --rotateX: 25deg;
     --rotateY: 0deg;
 }
 
-.pre-container.css-only>div:nth-child(7):hover~pre {
+.pre-container.css-only > div:nth-child(7):hover ~ pre {
     --rotateX: -25deg;
     --rotateY: -25deg;
 }
 
-.pre-container.css-only>div:nth-child(8):hover~pre {
+.pre-container.css-only > div:nth-child(8):hover ~ pre {
     --rotateX: 0deg;
     --rotateY: -25deg;
 }
 
-.pre-container.css-only>div:nth-child(9):hover~pre {
+.pre-container.css-only > div:nth-child(9):hover ~ pre {
     --rotateX: 25deg;
     --rotateY: -25deg;
 }

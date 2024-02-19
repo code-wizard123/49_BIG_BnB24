@@ -1,7 +1,11 @@
-.card{
-    background-color: #ffffff69;
+.card {
+    background-color: #ffffff10;
     border-radius: 10px;
+    border-style: solid;
+    border-color: aliceblue;
+    border-width: 0.01rem;
     width: 15vw;
     padding: 10px 20px;
-    
+    text-align: center;
+    margin-left: 5vw;
 }
